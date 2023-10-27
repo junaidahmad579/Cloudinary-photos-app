@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import { Button } from '@/components/ui/button';
-import { CldUploadButton } from 'next-cloudinary';
+import { CldUploadButton, CldUploadWidgetResults } from 'next-cloudinary';
 import { useRouter } from 'next/navigation';
 
 
@@ -14,15 +14,17 @@ type uploadResult={
   
 const UploadButton = () => {
   const router = useRouter();
+
+  const handleUpload = (result: CldUploadWidgetResults) => {
+    setTimeout(() => {
+      router.refresh();
+    }, 1000);
+  };
+
   return (      
          <Button asChild>
           <CldUploadButton 
-        onUpload={(result:uploadResult)=>{
-        setTimeout(()=>{
-          router.refresh();
-      },1000)
-        
-      }}
+        onUpload={handleUpload}
      
       uploadPreset="dileb6oq" >
 
