@@ -79,9 +79,9 @@ const EditPage = ({searchParams:{publicId}}:{searchParams:{publicId:string}}) =>
           {transformation === "blur" && (
             <CldImage
               src={publicId}
-              width="1200"
-              height="1400"
-              blur="800"
+              width={1200}
+              height={1400}
+              effects={[{ blur: "800" }]}
               alt="image"
             />
           )}
@@ -91,7 +91,7 @@ const EditPage = ({searchParams:{publicId}}:{searchParams:{publicId:string}}) =>
               src={publicId}
               width="1200"
               height="1400"
-              grayscale
+              effects={[{grayscale:"800"}]}
               alt="image"
             />
           )}
@@ -101,7 +101,7 @@ const EditPage = ({searchParams:{publicId}}:{searchParams:{publicId:string}}) =>
               src={publicId}
               width="1200"
               height="1400"
-              pixelate
+              effects={[{pixelate:"200"}]}
               alt="image"
             />
           )}
